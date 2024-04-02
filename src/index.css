@@ -1,0 +1,5 @@
+/* Styling search input when focused */
+.search:focus {
+  box-shadow: none !important; /* Remove box shadow when input is focused */
+  outline: none !important; /* Remove outline when input is focused (this is important for accessibility) */
+}
