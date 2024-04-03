@@ -10,6 +10,7 @@ import {
   getTeamDetailsRequest,
   getTeamDetailsSuccess,
 } from "../features/team/teamSlice";
+import { toast } from "react-hot-toast";
 
 const createTeam =
   (teamName, teamLeaderName, selectedUsers) => async (dispatch) => {
@@ -32,8 +33,10 @@ const createTeam =
       );
 
       dispatch(createTeamSuccess(data.message));
+      toast.success(data.message);
     } catch (error) {
       dispatch(createTeamFailure(error.response.data.message));
+      toast.error(error.response.data.message);
     }
   };
 

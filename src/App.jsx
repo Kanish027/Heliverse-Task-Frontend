@@ -6,6 +6,7 @@ import Home from "./page/Home";
 import CreateTeam from "./page/CreateTeam";
 import AllTeams from "./page/AllTeams";
 import TeamDetail from "./page/TeamDetail";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
         <Route path="/team/all" element={<AllTeams />} />
         <Route path="/team/:id" element={<TeamDetail />} />
       </Routes>
+      <Toaster />
     </div>
   );
 }

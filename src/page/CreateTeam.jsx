@@ -46,6 +46,10 @@ const CreateTeam = () => {
       renderCell: (params) => (
         <input
           type="checkbox"
+          disabled={
+            !params.row.availability ||
+            params.row.availability === "Not Available"
+          } // Disable if the user is not available
           checked={selectedUsers.includes(params.row.id)}
           onChange={(e) => handleUserSelection(e, params.row.id)}
         />
